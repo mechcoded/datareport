@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>🌸 PowerCo Churn Analysis | BCG</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to right, #fde2e4, #fadadd);
+            margin: 0;
+            padding: 40px;
+            color: #4a2c2a;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: #fff0f6;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0px 10px 30px rgba(255, 182, 193, 0.4);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            color: #c9184a;
+        }
+
+        h2 {
+            color: #a4133c;
+        }
+
+        h3 {
+            color: #800f2f;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        img {
+            width: 650px;
+            border-radius: 15px;
+            background: white;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        pre {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #6d6875;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>🌸 PowerCo Customer Churn Analysis 🌸</h1>
+
+        <p style="text-align:center;">
+            ✨ <strong>Boston Consulting Group (BCG) Data Science Case</strong> ✨<br>
+            Fuel & Energy Sector • Machine Learning • Business Impact
+        </p>
+
+        <div class="card">
+            <h2>🍃 Project Background</h2>
+            <p>
+                This project is based on a dataset provided as part of a
+                <strong>Boston Consulting Group (BCG)</strong> data science case.
+                The client, <strong>PowerCo</strong>, is a large
+                <strong>fuel and energy company</strong> operating in the utilities sector.
+            </p>
+            <p>
+                BCG engaged analytics to understand customer churn and identify
+                data-driven strategies to improve customer retention.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🌸 BCG Case Framing (SCQA)</h2>
+
+            <h3>🌱 Situation</h3>
+            <p>
+                PowerCo serves a large base of fuel and electricity customers.
+                The company collects detailed data on customer consumption,
+                pricing, contract tenure, and churn outcomes.
+                BCG provided this data to explore how analytics could support
+                better customer retention decisions.
+            </p>
+
+            <h3>🍃 Complication</h3>
+            <p>
+                Customer churn directly reduces revenue and increases acquisition costs.
+                Traditional rule-based approaches fail to capture complex interactions
+                between consumption behavior, pricing exposure, and tenure.
+                Without predictive insights, PowerCo risks losing high-value customers
+                without timely intervention.
+            </p>
+
+            <h3>🐱 Question (Hypothesis)</h3>
+            <p>
+                <strong>Can customer consumption patterns, pricing behavior, and tenure data
+                    be used to accurately predict churn for a fuel and energy company?</strong>
+            </p>
+
+            <h3>🌸 Answer</h3>
+            <p>
+                Yes. Exploratory Data Analysis revealed strong relationships between
+                usage volatility, pricing exposure, and churn.
+                A Random Forest model trained on engineered features achieved a
+                strong ROC-AUC score (<strong>0.719</strong>),
+                demonstrating effective discrimination between churned
+                and retained customers.
+            </p>
+
+            <h3>✨ Proposed Solution & Impact</h3>
+            <p>
+                By deploying this churn prediction model, PowerCo can:
+            </p>
+            <ul>
+                <li>Proactively identify high-risk churn customers</li>
+                <li>Design targeted retention strategies for fuel and energy customers</li>
+                <li>Reduce revenue loss and improve long-term customer value</li>
+                <li>Enable data-driven decision-making across commercial teams</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📊 Exploratory Data Analysis (EDA)</h2>
+            <p>
+                EDA was used to understand fuel and electricity consumption behavior,
+                pricing variability, and churn distribution.
+                These insights directly informed feature engineering and model design.
+            </p>
+            <h3>🌷 Churn Distribution</h3><img src='plots/churn_distribution.png'>
+            <h3>🌷 Cons 12M Distribution</h3><img src='plots/cons_12m_distribution.png'>
+            <h3>🌷 Cons Gas 12M Distribution</h3><img src='plots/cons_gas_12m_distribution.png'>
+            <h3>🌷 Cons Last Month Distribution</h3><img src='plots/cons_last_month_distribution.png'>
+            <h3>🌷 Forecast Cons 12M Distribution</h3><img src='plots/forecast_cons_12m_distribution.png'>
+            <h3>🌷 Forecast Cons Year Distribution</h3><img src='plots/forecast_cons_year_distribution.png'>
+            <h3>🌷 Forecast Discount Energy Distribution</h3><img src='plots/forecast_discount_energy_distribution.png'>
+            <h3>🌷 Forecast Meter Rent 12M Distribution</h3><img src='plots/forecast_meter_rent_12m_distribution.png'>
+            <h3>🌷 Forecast Price Energy Off Peak Distribution</h3><img
+                src='plots/forecast_price_energy_off_peak_distribution.png'>
+            <h3>🌷 Forecast Price Energy Peak Distribution</h3><img
+                src='plots/forecast_price_energy_peak_distribution.png'>
+            <h3>🌷 Forecast Price Pow Off Peak Distribution</h3><img
+                src='plots/forecast_price_pow_off_peak_distribution.png'>
+            <h3>🌷 Imp Cons Distribution</h3><img src='plots/imp_cons_distribution.png'>
+            <h3>🌷 Margin Gross Pow Ele Distribution</h3><img src='plots/margin_gross_pow_ele_distribution.png'>
+            <h3>🌷 Margin Net Pow Ele Distribution</h3><img src='plots/margin_net_pow_ele_distribution.png'>
+            <h3>🌷 Nb Prod Act Distribution</h3><img src='plots/nb_prod_act_distribution.png'>
+            <h3>🌷 Net Margin Distribution</h3><img src='plots/net_margin_distribution.png'>
+            <h3>🌷 Num Years Antig Distribution</h3><img src='plots/num_years_antig_distribution.png'>
+            <h3>🌷 Pow Max Distribution</h3><img src='plots/pow_max_distribution.png'>
+        </div>
+
+        <div class="card">
+            <h2>🧠 Predictive Modeling</h2>
+
+            <h3>🐱 Model Choice</h3>
+            <p>
+                A <strong>Random Forest Classifier</strong> was selected for its ability
+                to model non-linear relationships common in energy consumption
+                and pricing data.
+            </p>
+
+            <h3>🎯 Evaluation Metrics</h3>
+            <p>
+                Given class imbalance, model performance was evaluated using
+                Recall, F1-score, and ROC-AUC rather than accuracy alone.
+            </p>
+
+            <h3>📋 Classification Report</h3>
+            <pre>              precision    recall  f1-score   support
+
+           0       0.91      1.00      0.95      3297
+           1       0.87      0.10      0.17       355
+
+    accuracy                           0.91      3652
+   macro avg       0.89      0.55      0.56      3652
+weighted avg       0.91      0.91      0.88      3652
+</pre>
+
+            <h3>🧩 Confusion Matrix</h3>
+            <pre>[[3292    5]
+ [ 321   34]]</pre>
+
+            <h3>🌸 ROC-AUC Score</h3>
+            <p><strong>0.7186</strong></p>
+        </div>
+
+        <footer>
+            🍃 BCG Case Study • Fuel & Energy Analytics • Built with Python & Scikit-Learn 🌸
+        </footer>
+
+    </div>
+</body>
+
+</html>
